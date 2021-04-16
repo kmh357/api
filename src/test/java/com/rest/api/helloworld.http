@@ -1,0 +1,15 @@
+GET http://localhost:8080/helloworld/string
+Accept: application/json
+
+###
+
+GET http://localhost:8080/helloworld/json
+Accept: application/json
+
+###
+
+GET http://localhost:8080/helloworld/page
+Accept: application/json
+
+###
+
