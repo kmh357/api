@@ -2,6 +2,7 @@ package com.rest.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -10,6 +11,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+@Profile({"local", "dev"})
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
@@ -25,6 +27,6 @@ public class SwaggerConfiguration {
     private ApiInfo swaggerInfo() {
         return new ApiInfoBuilder().title("Spring API Documentation")
                 .description("앱 개발시 사용되는 서버 API에 대한 연동 문서입니다")
-                .license("happydaddy").licenseUrl("http://daddyprogrammer.org").version("1").build();
+                .license("kmh357").licenseUrl("http://kmh357,github.io").version("1").build();
     }
 }

@@ -1,3 +1,8 @@
+# 모든 프로파일 공통 설정
+spring:
+  profiles:
+    active: local,dev
+---
 server:
   port: 8080
 spring:
@@ -12,7 +17,22 @@ spring:
     hibernate:
       ddl-auto: update
 
-  freemarker:
-    content-type: text/html
-    template-loader-path: classpath:/templates/
-    suffix: .ftl
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+    cache: false
+
+  config:
+    activate:
+      on-profile: local
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
