@@ -1,7 +1,14 @@
 # 모든 프로파일 공통 설정
 spring:
   profiles:
-    active: local,dev
+    active: local,dev,prod
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+    cache: false
 ---
 server:
   port: 8080
@@ -16,12 +23,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-
-  thymeleaf:
-    suffix: .html
-    prefix: classpath:/templates/
-    cache: false
-
   config:
     activate:
       on-profile: local
@@ -31,8 +32,7 @@ spring:
     activate:
       on-profile: dev
 ---
-
 spring:
   config:
     activate:
-      on-profile: dev
+      on-profile: prod
